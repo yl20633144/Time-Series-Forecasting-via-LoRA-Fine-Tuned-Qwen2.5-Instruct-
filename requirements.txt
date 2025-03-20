@@ -1,0 +1,6 @@
+transformers>=4.49.0
+torch>=2.6.0
+accelerate>=1.4.0
+tqdm
+numpy>=2.2.3
+h5py>=3.13.0 

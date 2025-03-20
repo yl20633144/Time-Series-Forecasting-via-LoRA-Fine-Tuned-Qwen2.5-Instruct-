@@ -2,7 +2,63 @@ import h5py
 import numpy as np
 from transformers import AutoTokenizer
 
-def load_and_preprocess(file_path: str, decimal_places: int = 2, max_target_value: float = 10.0):
+# Convert the data to LLMTIME format
+def convert_to_llmtime(data_array, alpha, decimal_places):
+    """
+    Convert a dataset of predator-prey time series into LLMTIME format.
+
+    Parameters:
+    data_array: NumPy array 
+        Containing time series data of shape (N, T, 2),
+                  where N is the number of systems, T is the number of time points,
+                  and the last dimension represents (prey, predator).
+
+    alpha: float
+        Scaling factor computed from the training set.
+
+    decimal_places: int
+        Number of decimal places to round the scaled values.
+
+    Returns:
+    - A list of LLMTIME-formatted strings, where each string represents a time series.
+    """
+    text_list = []
+    for i in data_array:
+        #Each system has a shape of (100, 2), each row corresponds to a time point and the columns are the prey and predator populations
+        time_steps = []
+        for j in i:
+            #Scaling the data for each (prey,predator) value
+            values = [round(j[0] / alpha, decimal_places), round(j[1] * alpha, decimal_places)]
+            # Join values of a timestep with commas
+            step_str = ",".join(map(str, values))
+            time_steps.append(step_str)
+        # Use semicolon ";" to separate different timesteps in the same trajectory
+        llmtime_seq = ";".join(time_steps)
+        text_list.append(llmtime_seq)
+    return text_list
+
+def load_and_preprocess(file_path, decimal_places, max_target_value):
+    """
+    Load and preprocess the predator-prey dataset from an HDF5 file.
+
+    Parameters
+    ----------
+    file_path : str
+        Path to the HDF5 file containing the dataset.
+    decimal_places : int
+        Number of decimal places to round the scaled values.
+    max_target_value : float
+        Maximum target value for scaling.
+
+    Returns
+    -------
+    train_texts : list of str
+        Preprocessed training data sequences in LLMTIME format.
+    val_texts : list of str
+        Preprocessed validation data sequences in LLMTIME format.
+    test_texts : list of str
+        Preprocessed test data sequences in LLMTIME format.
+    """
 
     with h5py.File(file_path, "r") as f:
         # Access the full dataset
@@ -44,23 +100,6 @@ def load_and_preprocess(file_path: str, decimal_places: int = 2, max_target_valu
     alpha = train_q95 / max_target_value 
 
 
-    # Convert the data to LLMTIME format
-    def convert_to_llmtime(data_array, alpha, decimal_places):
-        text_list = []
-        for i in data_array:
-            #Each system has a shape of (100, 2), each row corresponds to a time point and the columns are the prey and predator populations
-            time_steps = []
-            for j in i:
-                #Scaling the data for each (prey,predator) value
-                values = [round(j[0] / alpha, decimal_places), round(j[1] * alpha, decimal_places)]
-                # Join values of a timestep with commas
-                step_str = ",".join(map(str, values))
-                time_steps.append(step_str)
-            # Use semicolon ";" to separate different timesteps in the same trajectory
-            llmtime_seq = ";".join(time_steps)
-            text_list.append(llmtime_seq)
-        return text_list
-    
     train_texts = convert_to_llmtime(train_data, alpha, decimal_places)
     val_texts = convert_to_llmtime(val_data, alpha, decimal_places)
     test_texts = convert_to_llmtime(test_data, alpha, decimal_places)
