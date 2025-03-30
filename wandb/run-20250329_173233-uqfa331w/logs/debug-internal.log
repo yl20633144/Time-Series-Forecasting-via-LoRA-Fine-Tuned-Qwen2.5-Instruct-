@@ -1,0 +1,40 @@
+{"time":"2025-03-29T17:32:33.486526Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250329_173233-uqfa331w/logs/debug-core.log"}
+{"time":"2025-03-29T17:32:33.593595Z","level":"INFO","msg":"created new stream","id":"uqfa331w"}
+{"time":"2025-03-29T17:32:33.593635Z","level":"INFO","msg":"stream: started","id":"uqfa331w"}
+{"time":"2025-03-29T17:32:33.593671Z","level":"INFO","msg":"handler: started","stream_id":"uqfa331w"}
+{"time":"2025-03-29T17:32:33.59392Z","level":"INFO","msg":"writer: Do: started","stream_id":"uqfa331w"}
+{"time":"2025-03-29T17:32:33.59426Z","level":"INFO","msg":"sender: started","stream_id":"uqfa331w"}
+{"time":"2025-03-29T17:32:33.850595Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-29T17:32:33.902324Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:32:33.905425Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:32:40.011491Z","level":"WARN","msg":"handler: ignoring partial history record","step":1,"current":2}
+{"time":"2025-03-29T17:32:43.061745Z","level":"WARN","msg":"handler: ignoring partial history record","step":2,"current":4}
+{"time":"2025-03-29T17:32:46.123156Z","level":"WARN","msg":"handler: ignoring partial history record","step":3,"current":6}
+{"time":"2025-03-29T17:32:49.250436Z","level":"WARN","msg":"handler: ignoring partial history record","step":4,"current":8}
+{"time":"2025-03-29T17:32:52.208447Z","level":"WARN","msg":"handler: ignoring partial history record","step":5,"current":10}
+{"time":"2025-03-29T17:32:55.340816Z","level":"WARN","msg":"handler: ignoring partial history record","step":6,"current":12}
+{"time":"2025-03-29T17:32:58.375174Z","level":"WARN","msg":"handler: ignoring partial history record","step":7,"current":14}
+{"time":"2025-03-29T17:33:01.282348Z","level":"WARN","msg":"handler: ignoring partial history record","step":8,"current":16}
+{"time":"2025-03-29T17:33:04.235909Z","level":"WARN","msg":"handler: ignoring partial history record","step":9,"current":18}
+{"time":"2025-03-29T17:33:07.432159Z","level":"WARN","msg":"handler: ignoring partial history record","step":10,"current":20}
+{"time":"2025-03-29T17:33:07.432845Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:33:07.43743Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:33:07.439156Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:33:07.441803Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:33:07.442567Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:33:07.445106Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:33:08.996767Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:33:09.006764Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:33:09.89852Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:33:09.902548Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:33:11.073161Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:33:11.083378Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:33:11.090377Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-29T17:33:11.091511Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-29T17:33:11.617274Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-29T17:33:11.82351Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-03-29T17:33:11.830111Z","level":"INFO","msg":"stream: closing","id":"uqfa331w"}
+{"time":"2025-03-29T17:33:11.830137Z","level":"INFO","msg":"writer: Close: closed","stream_id":"uqfa331w"}
+{"time":"2025-03-29T17:33:11.830141Z","level":"INFO","msg":"sender: closed","stream_id":"uqfa331w"}
+{"time":"2025-03-29T17:33:11.830298Z","level":"INFO","msg":"handler: closed","stream_id":"uqfa331w"}
+{"time":"2025-03-29T17:33:11.830309Z","level":"INFO","msg":"stream: closed","id":"uqfa331w"}

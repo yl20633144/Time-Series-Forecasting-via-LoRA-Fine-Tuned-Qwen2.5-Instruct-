@@ -1,0 +1,19 @@
+{"time":"2025-03-29T17:49:37.365777Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250329_174936-ubrwm9cq/logs/debug-core.log"}
+{"time":"2025-03-29T17:49:37.473657Z","level":"INFO","msg":"created new stream","id":"ubrwm9cq"}
+{"time":"2025-03-29T17:49:37.473695Z","level":"INFO","msg":"stream: started","id":"ubrwm9cq"}
+{"time":"2025-03-29T17:49:37.473701Z","level":"INFO","msg":"writer: Do: started","stream_id":"ubrwm9cq"}
+{"time":"2025-03-29T17:49:37.473713Z","level":"INFO","msg":"sender: started","stream_id":"ubrwm9cq"}
+{"time":"2025-03-29T17:49:37.473725Z","level":"INFO","msg":"handler: started","stream_id":"ubrwm9cq"}
+{"time":"2025-03-29T17:49:37.72126Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-29T17:49:42.367841Z","level":"WARN","msg":"handler: ignoring partial history record","step":1,"current":2}
+{"time":"2025-03-29T17:49:46.269522Z","level":"WARN","msg":"handler: ignoring partial history record","step":2,"current":4}
+{"time":"2025-03-29T17:49:50.009371Z","level":"WARN","msg":"handler: ignoring partial history record","step":3,"current":6}
+{"time":"2025-03-29T17:49:53.664108Z","level":"WARN","msg":"handler: ignoring partial history record","step":4,"current":8}
+{"time":"2025-03-29T17:49:57.36089Z","level":"WARN","msg":"handler: ignoring partial history record","step":5,"current":10}
+{"time":"2025-03-29T17:50:01.012522Z","level":"WARN","msg":"handler: ignoring partial history record","step":6,"current":12}
+{"time":"2025-03-29T17:50:04.765922Z","level":"WARN","msg":"handler: ignoring partial history record","step":7,"current":14}
+{"time":"2025-03-29T17:50:08.648812Z","level":"WARN","msg":"handler: ignoring partial history record","step":8,"current":16}
+{"time":"2025-03-29T17:50:12.528219Z","level":"WARN","msg":"handler: ignoring partial history record","step":9,"current":18}
+{"time":"2025-03-29T17:50:16.261038Z","level":"WARN","msg":"handler: ignoring partial history record","step":10,"current":20}
+{"time":"2025-03-29T18:22:52.688446Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:64508->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-03-29T18:36:20.279607Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:53137->35.186.228.49:443: read: connection reset by peer"}

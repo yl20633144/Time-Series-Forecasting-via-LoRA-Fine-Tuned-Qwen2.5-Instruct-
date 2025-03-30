@@ -1,0 +1,28 @@
+{"time":"2025-03-29T00:08:09.744469Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250329_000809-owk47bd2/logs/debug-core.log"}
+{"time":"2025-03-29T00:08:09.853985Z","level":"INFO","msg":"created new stream","id":"owk47bd2"}
+{"time":"2025-03-29T00:08:09.854032Z","level":"INFO","msg":"stream: started","id":"owk47bd2"}
+{"time":"2025-03-29T00:08:09.854072Z","level":"INFO","msg":"handler: started","stream_id":"owk47bd2"}
+{"time":"2025-03-29T00:08:09.854275Z","level":"INFO","msg":"writer: Do: started","stream_id":"owk47bd2"}
+{"time":"2025-03-29T00:08:09.854477Z","level":"INFO","msg":"sender: started","stream_id":"owk47bd2"}
+{"time":"2025-03-29T00:08:10.116246Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-29T00:08:10.165971Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T00:08:10.169246Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T00:11:00.20774Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T00:11:00.224759Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T00:11:00.227871Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T00:11:00.23316Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T00:11:00.244982Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T00:11:00.249043Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T00:11:01.202233Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T00:11:01.205873Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T00:11:03.672569Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T00:11:03.676473Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T00:11:03.682067Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-29T00:11:03.683023Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-29T00:11:04.360549Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-29T00:11:04.684382Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 9-10, summary, console lines 7-19","runtime_seconds":0.323399583}],"total_operations":1}}
+{"time":"2025-03-29T00:11:04.904279Z","level":"INFO","msg":"stream: closing","id":"owk47bd2"}
+{"time":"2025-03-29T00:11:04.904349Z","level":"INFO","msg":"sender: closed","stream_id":"owk47bd2"}
+{"time":"2025-03-29T00:11:04.904335Z","level":"INFO","msg":"writer: Close: closed","stream_id":"owk47bd2"}
+{"time":"2025-03-29T00:11:04.904499Z","level":"INFO","msg":"handler: closed","stream_id":"owk47bd2"}
+{"time":"2025-03-29T00:11:04.904675Z","level":"INFO","msg":"stream: closed","id":"owk47bd2"}

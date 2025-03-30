@@ -33,7 +33,7 @@ def flops_embedding(batch_size: int, seq_len: int, hidden_dim: int) -> int:
     # Each element: one addition (for positional embedding)
     return batch_size * seq_len * hidden_dim
 
-def flops_attention(batch_size: int, seq_len: int, hidden_dim: int, num_heads: int) -> int:
+def flops_attention(batch_size: int, seq_len: int, hidden_dim: int, num_heads: int, r: int = 0) -> int:
     """
     Estimate FLOPS for a multi-head attention layer.
     
@@ -54,6 +54,17 @@ def flops_attention(batch_size: int, seq_len: int, hidden_dim: int, num_heads: i
     # Q, K, V projections: three matrix multiplications.
     # For each: (seq_len x hidden_dim) x (hidden_dim x hidden_dim)
     flops_qkv = 3 * batch_size * seq_len * hidden_dim * (2 * hidden_dim - 1)
+
+    # Consider LoRA
+    # If LoRA is applied to Q and V projections, add extra FLOPs
+    flops_lora = 0
+    if r > 0:
+        # Each LoRA: A (d x r) + B (r x d) matrix multiply per token => FLOPs = 2 * d * r per projection
+        # Applied to Q and V => 2 * (2 * d * r) * tokens
+        flops_lora = 2 * 2 * batch_size * seq_len * hidden_dim * r  # 2 for Q and V
+
+    flops_qkv += flops_lora  # include LoRA
+
     
     # Dimension per head
     d_k = hidden_dim / num_heads  
@@ -103,7 +114,7 @@ def flops_feedforward(batch_size: int, seq_len: int, hidden_dim: int, ffn_ratio:
     # For each token: (2*hidden_dim - 1) * intermediate_dim
     flops_linear1 = batch_size * seq_len * ((2 * hidden_dim - 1) * intermediate_dim)
     # Activation FLOPS:
-    flops_activation = batch_size * seq_len * intermediate_dim
+    flops_activation = batch_size * seq_len * intermediate_dim * 14
     # Second linear layer FLOPS:
     flops_linear2 = batch_size * seq_len * ((2 * intermediate_dim - 1) * hidden_dim)
     return flops_linear1 + flops_activation + flops_linear2
@@ -123,13 +134,13 @@ def flops_norm(batch_size: int, seq_len: int, hidden_dim: int) -> int:
         Estimated FLOPS for the normalization layer.
     """
     # Per-token FLOPS for RMSNorm (no bias):
-    flops_per_token = (4 * hidden_dim) + 10
+    flops_per_token = (4 * hidden_dim) + 11
 
     # Total tokens = batch_size * seq_len
     total_flops = (batch_size * seq_len) * flops_per_token
     return total_flops
 
-def flops_transformer_block(batch_size: int, seq_len: int, hidden_dim: int, num_heads: int, ffn_ratio: float = 4.0) -> int:
+def flops_transformer_block(batch_size: int, seq_len: int, hidden_dim: int, num_heads: int, ffn_ratio: float = 4.0, r: int = 0) -> int:
     """
     Estimate FLOPS for a single Transformer block, which includes:
       - Multi-head attention.
@@ -146,13 +157,21 @@ def flops_transformer_block(batch_size: int, seq_len: int, hidden_dim: int, num_
     Returns:
         Estimated FLOPS for one Transformer block.
     """
-    flops_attn = flops_attention(batch_size, seq_len, hidden_dim, num_heads)
+    flops_attn = flops_attention(batch_size, seq_len, hidden_dim, num_heads,r)
     flops_ffn = flops_feedforward(batch_size, seq_len, hidden_dim, ffn_ratio)
     # Assume two normalization layers per block
     flops_norm_total = 2 * flops_norm(batch_size, seq_len, hidden_dim)
-    return flops_attn + flops_ffn + flops_norm_total
+    flops_residual = 2 * batch_size * seq_len * hidden_dim
+    return flops_attn + flops_ffn + flops_norm_total + flops_residual
 
-def flops_qwen_model(batch_size: int, seq_len: int, hidden_dim: int, num_layers: int, num_heads: int, ffn_ratio: float = 4.0) -> int:
+
+def flops_cross_entropy_loss(batch_size: int, seq_len: int) -> int:
+    # exp + sum + log + mul + neg ≈ 11 * V per token
+    vocab_size = 151936
+    return int(batch_size * seq_len * 11 * vocab_size)
+
+
+def flops_qwen_model(batch_size: int, seq_len: int, hidden_dim: int, num_layers: int, num_heads: int, ffn_ratio: float, r: int = 0 ) -> int:
     """
     Estimate FLOPS for one forward pass of the entire Qwen2.5-Instruct model.
     This includes:
@@ -174,13 +193,14 @@ def flops_qwen_model(batch_size: int, seq_len: int, hidden_dim: int, num_layers:
     flops_emb = flops_embedding(batch_size, seq_len, hidden_dim)
     flops_blocks = 0
     for _ in range(num_layers):
-        flops_blocks += flops_transformer_block(batch_size, seq_len, hidden_dim, num_heads, ffn_ratio)
+        flops_blocks += flops_transformer_block(batch_size, seq_len, hidden_dim, num_heads, ffn_ratio, r)
     # Output layer (LM head): a linear mapping from hidden_dim to vocab_size.
-    vocab_size = 50000  # placeholder value; adjust if needed
+    vocab_size = 151936
     flops_output = batch_size * seq_len * ((2 * hidden_dim - 1) * vocab_size)
-    return flops_emb + flops_blocks + flops_output
+    flops_loss = flops_cross_entropy_loss(batch_size, seq_len)
+    return flops_emb + flops_blocks + flops_output + flops_loss
 
-def flops_for_experiment(num_steps: int, batch_size: int, seq_len: int, hidden_dim: int, num_layers: int, num_heads: int, ffn_ratio: float = 4.0, training: bool = True) -> int:
+def flops_for_experiment(num_steps: int, batch_size: int, seq_len: int, hidden_dim: int, num_layers: int, num_heads: int, ffn_ratio: float, r: int ,training: bool = True) -> int:
     """
     Calculate the total estimated FLOPS for an experiment.
     
@@ -203,7 +223,7 @@ def flops_for_experiment(num_steps: int, batch_size: int, seq_len: int, hidden_d
     Returns:
         Total estimated FLOPS for the experiment.
     """
-    forward_flops = flops_qwen_model(batch_size, seq_len, hidden_dim, num_layers, num_heads, ffn_ratio)
+    forward_flops = flops_qwen_model(batch_size, seq_len, hidden_dim, num_layers, num_heads, ffn_ratio,r)
     if training:
         total_per_step = forward_flops * 3  # forward + 2×backward
     else:

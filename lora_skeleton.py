@@ -1,16 +1,14 @@
-import math
-
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
-from tqdm import tqdm
 from accelerate import Accelerator
-
 from preprocessor import load_and_preprocess
-from .qwen import load_qwen
+from qwen import load_qwen
+from tqdm import tqdm
+import wandb
+import matplotlib.pyplot as plt
 
 
-# LoRA implementation
 class LoRALinear(nn.Module):
     def __init__(self, original_linear: nn.Linear, r: int, alpha: int = None):
         super().__init__()
@@ -27,8 +25,6 @@ class LoRALinear(nn.Module):
         device = original_linear.weight.device
         self.A = nn.Parameter(torch.empty(r, in_dim, device=device))
         self.B = nn.Parameter(torch.zeros(out_dim, r, device=device))
-        
-        # Initialise A with He initialization
         nn.init.kaiming_normal_(self.A, nonlinearity="linear")
 
     def forward(self, x):
@@ -37,81 +33,83 @@ class LoRALinear(nn.Module):
         return base_out + lora_out * (self.alpha / self.r)
 
 
-model, tokenizer = load_qwen()
-lora_rank = 4
-
-# Actually apply LoRA to the model:
-for layer in model.model.layers:
-    layer.self_attn.q_proj = LoRALinear(layer.self_attn.q_proj, r=lora_rank)
-    layer.self_attn.v_proj = LoRALinear(layer.self_attn.v_proj, r=lora_rank)
-# ^These are the parts that will actually be trained!
-
-# Process the data into sequences of text
-train_texts, val_texts = load_and_preprocess("data/lotka_volterra_data.h5")
-
-# ^Each of these is a `list[str]` representing contiguous parts of the time series,
-#  in text form (using the LLMTIME scheme).
+def apply_lora(model, r=4, alpha=None):
+    for layer in model.model.layers:
+        layer.self_attn.q_proj = LoRALinear(layer.self_attn.q_proj, r=r, alpha=alpha)
+        layer.self_attn.v_proj = LoRALinear(layer.self_attn.v_proj, r=r, alpha=alpha)
+    return model
 
 
-# Modified tokenization with chunking
-def process_sequences(texts, tokenizer, max_length=512, stride=256):
-    all_input_ids = []
-    for text in texts:
-        # Apply Qwen's tokenization scheme to the text:
-        encoding = tokenizer(text, return_tensors="pt", add_special_tokens=False)
-        seq_ids = encoding.input_ids[0]
-
-        # Create sliding windows to further divide the data into chunks:
-        for i in range(0, len(seq_ids), stride):
-            chunk = seq_ids[i : i + max_length]
-            if len(chunk) < max_length:
-                chunk = torch.cat(
-                    [
-                        chunk,
-                        torch.full((max_length - len(chunk),), tokenizer.pad_token_id),
-                    ]
-                )
-            all_input_ids.append(chunk)
-    return torch.stack(all_input_ids)
 
 
-# Defines the maximum context length
-max_ctx_length = 512
-train_input_ids = process_sequences(
-    train_texts, tokenizer, max_ctx_length, stride=max_ctx_length // 2
-)
-val_input_ids = process_sequences(
-    val_texts, tokenizer, max_ctx_length, stride=max_ctx_length
-)
+def load_data(tokenizer, path="lotka_volterra_data.h5", max_ctx_length=512, stride=256):
+    train_texts, val_texts, test_texts = load_and_preprocess(
+        path, decimal_places=2, max_target_value=9.99
+    )
 
-batch_size = 4
-learning_rate = 1e-5
+    def process_sequences(texts):
+        all_input_ids = []
+        for text in texts:
+            encoding = tokenizer(text, return_tensors="pt", add_special_tokens=False)
+            seq_ids = encoding.input_ids[0]
+            for i in range(0, len(seq_ids), stride):
+                chunk = seq_ids[i : i + max_ctx_length]
+                if len(chunk) < max_ctx_length:
+                    chunk = torch.cat(
+                        [torch.full((max_ctx_length - len(chunk),), tokenizer.pad_token_id),chunk]
+                    )
+                all_input_ids.append(chunk)
+        return torch.stack(all_input_ids)
 
-optimizer = torch.optim.Adam(
-    (p for p in model.parameters() if p.requires_grad), lr=learning_rate
-)
-train_dataset = TensorDataset(train_input_ids)
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    return process_sequences(train_texts), process_sequences(val_texts), process_sequences(test_texts)
 
 
-# Prepare components with Accelerator
-accelerator = Accelerator()
-model, optimizer, train_loader = accelerator.prepare(model, optimizer, train_loader)
+_,tokenizer=load_qwen()
 
-model.train()
-steps = 0
-while steps < 10000:
-    progress_bar = tqdm(train_loader, desc=f"Steps {steps}")
-    for (batch,) in progress_bar:
-        optimizer.zero_grad()
-        outputs = model(batch, labels=batch)
-        loss = outputs.loss
-        accelerator.backward(loss)
-        optimizer.step()
-        steps += 1
+def train_lora(model, train_input_ids, learning_rate=1e-5, batch_size=4, max_steps=10000):
+    train_dataset = TensorDataset(train_input_ids)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
-        progress_bar.set_postfix(loss=loss.item())
-        if steps > 10000:
-            break
+    optimizer = torch.optim.Adam(
+        (p for p in model.parameters() if p.requires_grad), lr=learning_rate
+    )
+    accelerator = Accelerator()
+    model, optimizer, train_loader = accelerator.prepare(model, optimizer, train_loader)
 
-model.eval()
+    model.train()
+    steps = 0
+    losses = []
+    pbar = tqdm(total=max_steps, desc="Training")
+    while steps < max_steps:
+        for (batch,) in train_loader:
+            optimizer.zero_grad()
+            labels = batch.clone()
+            labels[labels == tokenizer.pad_token_id] = -100
+            outputs = model(batch, labels=labels)
+
+            loss = outputs.loss
+            accelerator.backward(loss)
+            optimizer.step()
+
+            wandb.log({
+                "step": steps,
+                "loss": loss.item()
+            })
+
+            losses.append(loss.item())
+            steps += 1
+            pbar.update(1)
+            pbar.set_postfix({"loss": loss.item()})
+            if steps % 50 == 0:
+                tqdm.write(f"Step {steps}: loss = {loss.item():.4f}")
+            if steps >= max_steps:
+                break
+    pbar.close()
+        
+    plt.plot(losses)
+    plt.title("Training Loss")
+    plt.xlabel("Step")
+    plt.ylabel("Loss")
+    wandb.log({"training_loss_curve": wandb.Image(plt)})
+    plt.close()
+    return losses

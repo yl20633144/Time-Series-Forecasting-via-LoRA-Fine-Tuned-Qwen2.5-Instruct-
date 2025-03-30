@@ -1,0 +1,7 @@
+{"time":"2025-03-29T17:20:53.348358Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250329_172052-vw28j5e1/logs/debug-core.log"}
+{"time":"2025-03-29T17:20:53.455966Z","level":"INFO","msg":"created new stream","id":"vw28j5e1"}
+{"time":"2025-03-29T17:20:53.456002Z","level":"INFO","msg":"stream: started","id":"vw28j5e1"}
+{"time":"2025-03-29T17:20:53.456005Z","level":"INFO","msg":"handler: started","stream_id":"vw28j5e1"}
+{"time":"2025-03-29T17:20:53.456007Z","level":"INFO","msg":"writer: Do: started","stream_id":"vw28j5e1"}
+{"time":"2025-03-29T17:20:53.456011Z","level":"INFO","msg":"sender: started","stream_id":"vw28j5e1"}
+{"time":"2025-03-29T17:20:53.801944Z","level":"INFO","msg":"Starting system monitor"}

@@ -1,0 +1,43 @@
+2025-03-27 15:05:19,297 INFO    MainThread:99810 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /Users/liuyihao/Desktop/m2cw/wandb/run-20250327_150519-9x7xwnda/logs/debug.log
+2025-03-27 15:05:19,297 INFO    MainThread:99810 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /Users/liuyihao/Desktop/m2cw/wandb/run-20250327_150519-9x7xwnda/logs/debug-internal.log
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [wandb_init.py:init():761] calling init triggers
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [wandb_init.py:init():773] finishing previous run: jdi508xn
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [wandb_run.py:_finish():2112] finishing run liuyihao649-university-of-cambridge/qwen-lora/jdi508xn
+2025-03-27 15:05:19,298 ERROR   MainThread:99810 [jupyter.py:save_history():450] Run pip install nbformat to save notebook history
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [jupyter.py:save_ipynb():386] not saving jupyter notebook
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [wandb_init.py:_jupyter_teardown():581] cleaning up jupyter logic
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 0
+2025-03-27 15:05:19,298 INFO    MainThread:99810 [wandb_run.py:_restore():2322] restore
+2025-03-27 15:05:19,299 INFO    MainThread:99810 [wandb_run.py:_restore():2328] restore done
+2025-03-27 15:05:20,229 INFO    MainThread:99810 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2025-03-27 15:05:20,230 INFO    MainThread:99810 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2025-03-27 15:05:20,231 INFO    MainThread:99810 [wandb_run.py:_footer_sync_info():3917] logging synced files
+2025-03-27 15:05:20,233 INFO    MainThread:99810 [wandb_init.py:init():784] starting backend
+2025-03-27 15:05:20,234 INFO    MainThread:99810 [wandb_init.py:init():788] sending inform_init request
+2025-03-27 15:05:20,236 INFO    MainThread:99810 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-03-27 15:05:20,237 INFO    MainThread:99810 [wandb_init.py:init():798] backend started and connected
+2025-03-27 15:05:20,244 INFO    MainThread:99810 [wandb_run.py:_label_probe_notebook():1204] probe notebook
+2025-03-27 15:05:20,245 INFO    MainThread:99810 [wandb_init.py:init():891] updated telemetry
+2025-03-27 15:05:20,278 INFO    MainThread:99810 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-03-27 15:05:20,839 INFO    MainThread:99810 [wandb_init.py:init():990] starting run threads in backend
+2025-03-27 15:05:20,904 INFO    MainThread:99810 [wandb_run.py:_console_start():2375] atexit reg
+2025-03-27 15:05:20,905 INFO    MainThread:99810 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-27 15:05:20,905 INFO    MainThread:99810 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-27 15:05:20,905 INFO    MainThread:99810 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-03-27 15:05:20,905 INFO    MainThread:99810 [wandb_init.py:init():1032] run started, returning control to user process
+2025-03-27 15:11:17,727 INFO    MainThread:99810 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /Users/liuyihao/Desktop/m2cw/wandb/run-20250327_151117-yphyudfc/logs/debug.log
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /Users/liuyihao/Desktop/m2cw/wandb/run-20250327_151117-yphyudfc/logs/debug-internal.log
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_init.py:monkeypatch_ipython():599] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x3f81e6b70>
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_init.py:init():761] calling init triggers
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_init.py:init():773] finishing previous run: 9x7xwnda
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_run.py:_finish():2112] finishing run liuyihao649-university-of-cambridge/qwen-eval/9x7xwnda
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_run.py:_atexit_cleanup():2340] got exitcode: 0
+2025-03-27 15:11:17,729 INFO    MainThread:99810 [wandb_run.py:_restore():2322] restore
+2025-03-27 15:11:17,730 INFO    MainThread:99810 [wandb_run.py:_restore():2328] restore done
+2025-03-27 15:11:18,623 INFO    MainThread:99810 [wandb_run.py:_footer_history_summary_info():3956] rendering history
+2025-03-27 15:11:18,623 INFO    MainThread:99810 [wandb_run.py:_footer_history_summary_info():3988] rendering summary
+2025-03-27 15:11:18,625 INFO    MainThread:99810 [wandb_run.py:_footer_sync_info():3917] logging synced files

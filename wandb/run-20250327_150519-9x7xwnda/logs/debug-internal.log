@@ -1,0 +1,21 @@
+{"time":"2025-03-27T15:05:20.237698Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250327_150519-9x7xwnda/logs/debug-core.log"}
+{"time":"2025-03-27T15:05:20.45306Z","level":"INFO","msg":"created new stream","id":"9x7xwnda"}
+{"time":"2025-03-27T15:05:20.453098Z","level":"INFO","msg":"stream: started","id":"9x7xwnda"}
+{"time":"2025-03-27T15:05:20.453104Z","level":"INFO","msg":"writer: Do: started","stream_id":"9x7xwnda"}
+{"time":"2025-03-27T15:05:20.453115Z","level":"INFO","msg":"handler: started","stream_id":"9x7xwnda"}
+{"time":"2025-03-27T15:05:20.453132Z","level":"INFO","msg":"sender: started","stream_id":"9x7xwnda"}
+{"time":"2025-03-27T15:05:20.842225Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-27T15:06:15.747742Z","level":"WARN","msg":"handler: ignoring partial history record","step":0,"current":1}
+{"time":"2025-03-27T15:06:30.159019Z","level":"WARN","msg":"handler: ignoring partial history record","step":1,"current":2}
+{"time":"2025-03-27T15:06:44.381791Z","level":"WARN","msg":"handler: ignoring partial history record","step":2,"current":3}
+{"time":"2025-03-27T15:06:58.528007Z","level":"WARN","msg":"handler: ignoring partial history record","step":3,"current":4}
+{"time":"2025-03-27T15:07:13.580955Z","level":"WARN","msg":"handler: ignoring partial history record","step":4,"current":5}
+{"time":"2025-03-27T15:11:17.730316Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-27T15:11:17.730815Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-27T15:11:18.448429Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-27T15:11:18.619668Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-03-27T15:11:18.629196Z","level":"INFO","msg":"stream: closing","id":"9x7xwnda"}
+{"time":"2025-03-27T15:11:18.629224Z","level":"INFO","msg":"handler: closed","stream_id":"9x7xwnda"}
+{"time":"2025-03-27T15:11:18.629245Z","level":"INFO","msg":"sender: closed","stream_id":"9x7xwnda"}
+{"time":"2025-03-27T15:11:18.629232Z","level":"INFO","msg":"writer: Close: closed","stream_id":"9x7xwnda"}
+{"time":"2025-03-27T15:11:18.629474Z","level":"INFO","msg":"stream: closed","id":"9x7xwnda"}

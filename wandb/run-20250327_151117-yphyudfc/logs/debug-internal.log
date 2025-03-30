@@ -1,0 +1,17 @@
+{"time":"2025-03-27T15:11:18.630185Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250327_151117-yphyudfc/logs/debug-core.log"}
+{"time":"2025-03-27T15:11:18.742092Z","level":"INFO","msg":"created new stream","id":"yphyudfc"}
+{"time":"2025-03-27T15:11:18.742122Z","level":"INFO","msg":"stream: started","id":"yphyudfc"}
+{"time":"2025-03-27T15:11:18.742131Z","level":"INFO","msg":"writer: Do: started","stream_id":"yphyudfc"}
+{"time":"2025-03-27T15:11:18.74214Z","level":"INFO","msg":"handler: started","stream_id":"yphyudfc"}
+{"time":"2025-03-27T15:11:18.742175Z","level":"INFO","msg":"sender: started","stream_id":"yphyudfc"}
+{"time":"2025-03-27T15:11:19.430347Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-27T15:11:19.511764Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-27T15:11:39.844949Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-27T15:11:54.804113Z","level":"WARN","msg":"handler: ignoring partial history record","step":0,"current":1}
+{"time":"2025-03-27T15:12:08.869036Z","level":"WARN","msg":"handler: ignoring partial history record","step":1,"current":2}
+{"time":"2025-03-27T15:12:23.369272Z","level":"WARN","msg":"handler: ignoring partial history record","step":2,"current":3}
+{"time":"2025-03-27T15:12:38.217628Z","level":"WARN","msg":"handler: ignoring partial history record","step":3,"current":4}
+{"time":"2025-03-27T15:12:53.472277Z","level":"WARN","msg":"handler: ignoring partial history record","step":4,"current":5}
+{"time":"2025-03-27T15:12:59.373039Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-27T15:13:04.774716Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-27T15:13:04.77727Z","level":"INFO","msg":"Pausing system monitor"}

@@ -1,0 +1,83 @@
+{"time":"2025-03-28T15:47:41.55581Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250328_154740-3zv81h2j/logs/debug-core.log"}
+{"time":"2025-03-28T15:47:41.674909Z","level":"INFO","msg":"created new stream","id":"3zv81h2j"}
+{"time":"2025-03-28T15:47:41.674948Z","level":"INFO","msg":"stream: started","id":"3zv81h2j"}
+{"time":"2025-03-28T15:47:41.674966Z","level":"INFO","msg":"writer: Do: started","stream_id":"3zv81h2j"}
+{"time":"2025-03-28T15:47:41.674965Z","level":"INFO","msg":"sender: started","stream_id":"3zv81h2j"}
+{"time":"2025-03-28T15:47:41.674992Z","level":"INFO","msg":"handler: started","stream_id":"3zv81h2j"}
+{"time":"2025-03-28T15:47:41.978789Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-28T15:47:42.055038Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T15:47:44.945319Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T15:51:30.372809Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T18:21:25.611514Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:64201->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-03-28T18:35:08.448093Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:51159->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-03-28T22:46:46.324526Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:46:46.353163Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:46:55.330196Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:46:55.391696Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:46:56.465973Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:46:56.472375Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:46:57.104055Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:46:57.136624Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:46:57.144013Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:46:57.166933Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:47:00.464286Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:47:00.493094Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:47:00.566734Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:47:00.587717Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:47:16.442231Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:47:16.44381Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:47:16.450663Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:47:16.469437Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:47:27.137641Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:47:27.143931Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:48:23.067854Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:48:23.069359Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:48:27.622336Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:48:27.639193Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:48:35.869954Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:48:36.136813Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:49:53.658538Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:49:53.687604Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:49:57.494279Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:49:57.497261Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:49:59.809337Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:49:59.811122Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:50:04.861603Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:50:04.872935Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:51:55.27447Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:51:55.290446Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:52:04.36215Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:52:04.364946Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:52:13.521909Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:52:13.525177Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:52:19.07509Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:52:19.077456Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:53:07.904005Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:53:07.914266Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:55:55.821013Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:55:55.824059Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:56:02.47501Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:56:02.478584Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:56:02.996872Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/3zv81h2j/file_stream\": read tcp 10.255.243.185:61846->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-03-28T22:56:12.026221Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:56:12.028469Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:56:16.131536Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T22:56:16.133554Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T22:56:47.647339Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/3zv81h2j/file_stream\": read tcp 10.255.243.185:61875->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-03-28T23:00:25.270628Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/3zv81h2j/file_stream\": dial tcp 35.186.228.49:443: connect: operation timed out"}
+{"time":"2025-03-28T23:07:47.041414Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T23:07:47.082215Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T23:07:55.075048Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T23:07:55.077779Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T23:43:33.150616Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T23:43:33.15664Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T23:51:11.086715Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T23:51:11.091442Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T23:51:19.721588Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T23:51:19.724645Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T23:51:56.229992Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T23:51:56.240074Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-28T23:52:10.239504Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-28T23:52:10.241665Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T00:06:32.337535Z","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/3zv81h2j/file_stream"}
+{"time":"2025-03-29T00:06:32.33912Z","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/3zv81h2j/file_stream: {\"error\":\"project liuyihao649-university-of-cambridge/Qwen_3a_train_model not found while streaming file\"}"}

@@ -28,9 +28,11 @@ def convert_to_llmtime(data_array, alpha, decimal_places):
         time_steps = []
         for j in i:
             #Scaling the data for each (prey,predator) value
-            values = [round(j[0] / alpha, decimal_places), round(j[1] * alpha, decimal_places)]
+            
+            prey_formatted = format(j[0] / alpha, f".{decimal_places}f")
+            predator_formatted = format(j[1] / alpha, f".{decimal_places}f")
             # Join values of a timestep with commas
-            step_str = ",".join(map(str, values))
+            step_str = f"{prey_formatted},{predator_formatted}"
             time_steps.append(step_str)
         # Use semicolon ";" to separate different timesteps in the same trajectory
         llmtime_seq = ";".join(time_steps)
@@ -95,9 +97,9 @@ def load_and_preprocess(file_path, decimal_places, max_target_value):
     test_data = trajectories[test_indices]
     #---End of data split---
 
-    # Compute alpha based on training set only. Set 95% of the values in the training set within 0-max_target_value
-    train_q95 = np.percentile(train_data,95)
-    alpha = train_q95 / max_target_value 
+    # Compute alpha based on training set only. 
+    train_max = np.max(train_data)
+    alpha = train_max / max_target_value 
 
 
     train_texts = convert_to_llmtime(train_data, alpha, decimal_places)

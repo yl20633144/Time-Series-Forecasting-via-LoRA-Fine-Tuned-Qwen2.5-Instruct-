@@ -1,0 +1,26 @@
+{"time":"2025-03-29T17:28:17.944924Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250329_172817-ohuyo0t7/logs/debug-core.log"}
+{"time":"2025-03-29T17:28:18.052773Z","level":"INFO","msg":"created new stream","id":"ohuyo0t7"}
+{"time":"2025-03-29T17:28:18.052812Z","level":"INFO","msg":"stream: started","id":"ohuyo0t7"}
+{"time":"2025-03-29T17:28:18.052842Z","level":"INFO","msg":"handler: started","stream_id":"ohuyo0t7"}
+{"time":"2025-03-29T17:28:18.053092Z","level":"INFO","msg":"writer: Do: started","stream_id":"ohuyo0t7"}
+{"time":"2025-03-29T17:28:18.053438Z","level":"INFO","msg":"sender: started","stream_id":"ohuyo0t7"}
+{"time":"2025-03-29T17:28:18.343941Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-29T17:28:18.395872Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:28:18.399232Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:28:24.403951Z","level":"WARN","msg":"handler: ignoring partial history record","step":1,"current":2}
+{"time":"2025-03-29T17:28:27.435137Z","level":"WARN","msg":"handler: ignoring partial history record","step":2,"current":4}
+{"time":"2025-03-29T17:28:30.631958Z","level":"WARN","msg":"handler: ignoring partial history record","step":3,"current":6}
+{"time":"2025-03-29T17:28:33.65074Z","level":"WARN","msg":"handler: ignoring partial history record","step":4,"current":8}
+{"time":"2025-03-29T17:28:36.653865Z","level":"WARN","msg":"handler: ignoring partial history record","step":5,"current":10}
+{"time":"2025-03-29T17:28:39.519926Z","level":"WARN","msg":"handler: ignoring partial history record","step":6,"current":12}
+{"time":"2025-03-29T17:28:42.459427Z","level":"WARN","msg":"handler: ignoring partial history record","step":7,"current":14}
+{"time":"2025-03-29T17:28:45.344301Z","level":"WARN","msg":"handler: ignoring partial history record","step":8,"current":16}
+{"time":"2025-03-29T17:28:48.258264Z","level":"WARN","msg":"handler: ignoring partial history record","step":9,"current":18}
+{"time":"2025-03-29T17:28:51.260373Z","level":"WARN","msg":"handler: ignoring partial history record","step":10,"current":20}
+{"time":"2025-03-29T17:28:51.26112Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:28:51.265594Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:28:51.26759Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:28:51.270275Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:28:51.271034Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:28:51.273208Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:28:51.341679Z","level":"INFO","msg":"Pausing system monitor"}

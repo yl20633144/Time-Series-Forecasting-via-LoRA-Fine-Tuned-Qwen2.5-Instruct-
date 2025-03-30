@@ -1,0 +1,40 @@
+{"time":"2025-03-29T17:20:16.051745Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250329_172016-oc0lu6ll/logs/debug-core.log"}
+{"time":"2025-03-29T17:20:16.157596Z","level":"INFO","msg":"created new stream","id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:16.157632Z","level":"INFO","msg":"stream: started","id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:16.157639Z","level":"INFO","msg":"handler: started","stream_id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:16.15765Z","level":"INFO","msg":"writer: Do: started","stream_id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:16.15767Z","level":"INFO","msg":"sender: started","stream_id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:16.601775Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-29T17:20:16.657178Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:20:16.660279Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:20:22.735319Z","level":"WARN","msg":"handler: ignoring partial history record","step":1,"current":2}
+{"time":"2025-03-29T17:20:25.957839Z","level":"WARN","msg":"handler: ignoring partial history record","step":2,"current":4}
+{"time":"2025-03-29T17:20:29.139314Z","level":"WARN","msg":"handler: ignoring partial history record","step":3,"current":6}
+{"time":"2025-03-29T17:20:32.079056Z","level":"WARN","msg":"handler: ignoring partial history record","step":4,"current":8}
+{"time":"2025-03-29T17:20:34.985928Z","level":"WARN","msg":"handler: ignoring partial history record","step":5,"current":10}
+{"time":"2025-03-29T17:20:37.920857Z","level":"WARN","msg":"handler: ignoring partial history record","step":6,"current":12}
+{"time":"2025-03-29T17:20:40.932361Z","level":"WARN","msg":"handler: ignoring partial history record","step":7,"current":14}
+{"time":"2025-03-29T17:20:44.06587Z","level":"WARN","msg":"handler: ignoring partial history record","step":8,"current":16}
+{"time":"2025-03-29T17:20:47.084145Z","level":"WARN","msg":"handler: ignoring partial history record","step":9,"current":18}
+{"time":"2025-03-29T17:20:50.06885Z","level":"WARN","msg":"handler: ignoring partial history record","step":10,"current":20}
+{"time":"2025-03-29T17:20:50.06951Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:20:50.074324Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:20:50.076174Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:20:50.078723Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:20:50.079409Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:20:50.081674Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:20:50.083707Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:20:50.085958Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:20:50.934198Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:20:50.937288Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:20:52.574572Z","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-03-29T17:20:52.581572Z","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-03-29T17:20:52.59605Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-29T17:20:52.596954Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-29T17:20:53.146915Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-29T17:20:53.332783Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-03-29T17:20:53.347134Z","level":"INFO","msg":"stream: closing","id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:53.347163Z","level":"INFO","msg":"handler: closed","stream_id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:53.347175Z","level":"INFO","msg":"writer: Close: closed","stream_id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:53.347187Z","level":"INFO","msg":"sender: closed","stream_id":"oc0lu6ll"}
+{"time":"2025-03-29T17:20:53.347296Z","level":"INFO","msg":"stream: closed","id":"oc0lu6ll"}

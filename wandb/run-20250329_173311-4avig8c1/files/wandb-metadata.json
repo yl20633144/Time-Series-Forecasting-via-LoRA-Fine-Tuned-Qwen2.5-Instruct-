@@ -1,0 +1,44 @@
+{
+  "os": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "CPython 3.12.9",
+  "startedAt": "2025-03-29T17:33:11.831651Z",
+  "program": "/Users/liuyihao/Desktop/m2cw/m2coursework.ipynb",
+  "codePath": "m2coursework.ipynb",
+  "git": {
+    "remote": "git@gitlab.developers.cam.ac.uk:phy/data-intensive-science-mphil/assessments/m2_coursework/yl2063.git",
+    "commit": "c18db17133cbc9292d2459dc6ba84e215623fe76"
+  },
+  "email": "liuyihao649@gmail.com",
+  "root": "/Users/liuyihao/Desktop/m2cw",
+  "host": "gous-MacBook-Pro.local",
+  "executable": "/opt/anaconda3/envs/qwen/bin/python",
+  "codePathLocal": "m2coursework.ipynb",
+  "cpu_count": 14,
+  "cpu_count_logical": 14,
+  "disk": {
+    "/": {
+      "total": "994662584320",
+      "used": "249046839296"
+    },
+    "/System/Volumes/Data": {
+      "total": "994662584320",
+      "used": "249046839296"
+    }
+  },
+  "memory": {
+    "total": "25769803776"
+  },
+  "cpu": {
+    "count": 14,
+    "countLogical": 14
+  },
+  "apple": {
+    "name": "Apple M4 Pro",
+    "ecpuCores": 4,
+    "pcpuCores": 10,
+    "gpuCores": 20,
+    "memoryGb": 24,
+    "swapTotalBytes": "32212254720",
+    "ramTotalBytes": "25769803776"
+  }
+}

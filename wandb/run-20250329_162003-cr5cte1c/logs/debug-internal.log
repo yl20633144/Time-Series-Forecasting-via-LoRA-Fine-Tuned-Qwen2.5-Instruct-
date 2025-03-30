@@ -1,0 +1,9 @@
+{"time":"2025-03-29T16:20:05.678085Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250329_162003-cr5cte1c/logs/debug-core.log"}
+{"time":"2025-03-29T16:20:05.787425Z","level":"INFO","msg":"created new stream","id":"cr5cte1c"}
+{"time":"2025-03-29T16:20:05.787465Z","level":"INFO","msg":"stream: started","id":"cr5cte1c"}
+{"time":"2025-03-29T16:20:05.787476Z","level":"INFO","msg":"writer: Do: started","stream_id":"cr5cte1c"}
+{"time":"2025-03-29T16:20:05.78749Z","level":"INFO","msg":"sender: started","stream_id":"cr5cte1c"}
+{"time":"2025-03-29T16:20:05.787492Z","level":"INFO","msg":"handler: started","stream_id":"cr5cte1c"}
+{"time":"2025-03-29T16:20:06.104619Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-29T16:22:49.442193Z","level":"WARN","msg":"handler: ignoring partial history record","step":1,"current":2}
+{"time":"2025-03-29T16:23:59.422786Z","level":"WARN","msg":"handler: ignoring partial history record","step":2,"current":4}

@@ -1,0 +1,150 @@
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:629: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:634: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:651: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+Validation Loss: 0.8502
+Validation MSE (forecast): 5.0459
+=== Inference FLOPS Calculation ===
+Number of inference steps: 1
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 768
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for inference: 12.57754253773389
+tensor([18, 13, 15, 19, 11, 15, 13, 18, 15, 26, 17, 13, 15, 23, 11, 15, 13, 17,
+        23, 26, 16, 13, 20, 19, 11, 15, 13, 17, 19, 26, 16, 13, 17, 22, 11, 15,
+        13, 16, 24, 26, 16, 13, 16, 21, 11, 15, 13, 16, 20, 26, 16, 13, 16, 20,
+        11, 15, 13, 16, 17, 26, 16, 13, 17, 17, 11, 15, 13, 15, 24, 26, 16, 13,
+        18, 21, 11, 15, 13, 15, 23, 26, 16, 13, 20, 22, 11, 15, 13, 15, 21, 26,
+        16, 13, 23, 21, 11, 15, 13, 15, 20, 26, 17, 13, 17, 19, 11, 15, 13, 15,
+        20, 26, 17, 13, 22, 16, 11, 15, 13, 15, 19, 26, 18, 13, 17, 22, 11, 15,
+        13, 15, 19, 26, 18, 13, 24, 16, 11, 15, 13, 15, 19, 26, 19, 13, 21, 16,
+        11, 15, 13, 15, 20, 26, 20, 13, 18, 15, 11, 15, 13, 15, 21, 26, 20, 13,
+        23, 23, 11, 15, 13, 15, 22, 26, 21, 13, 17, 17, 11, 15, 13, 16, 15, 26,
+        21, 13, 16, 21, 11, 15, 13, 16, 18, 26, 20, 13, 21, 18, 11, 15, 13, 16,
+        23, 26, 19, 13, 22, 17, 11, 15, 13, 17, 17, 26, 18, 13, 22, 15, 11, 15,
+        13, 17, 19, 26, 17, 13, 23, 17, 11, 15, 13, 17, 19, 26, 17, 13, 17, 16,
+        11, 15, 13, 17, 17, 26, 16, 13, 23, 18, 11, 15, 13, 17, 15, 26, 16, 13,
+        21, 19, 11, 15, 13, 16, 21, 26, 16, 13, 20, 22, 11, 15, 13, 16, 19, 26,
+        16, 13, 20, 24, 11, 15, 13, 16, 16, 26, 16, 13, 22, 15, 11, 15, 13, 15,
+        24, 26, 16, 13, 23, 23, 11, 15, 13, 15, 23, 26, 17, 13, 16, 18, 11, 15,
+        13, 15, 22, 26, 17, 13, 19, 21, 11, 15, 13, 15, 21, 26, 17, 13, 23, 20,
+        11, 15, 13, 15, 21, 26, 18, 13, 18, 16, 11, 15, 13, 15, 21, 26, 18, 13,
+        23, 17, 11, 15, 13, 15, 21, 26, 19, 13, 18, 19, 11, 15, 13, 15, 22, 26,
+        19, 13, 23, 16, 11, 15, 13, 15, 23, 26, 20, 13, 16, 22, 11, 15, 13, 15,
+        24, 26, 20, 13, 18, 17, 11, 15, 13, 16, 16, 26, 20, 13, 16, 24, 11, 15,
+        13, 16, 19, 26, 19, 13, 22, 23, 11, 15, 13, 16, 22, 26, 19, 13, 16, 21,
+        11, 15, 13, 16, 24, 26, 18, 13, 19, 24, 11, 15, 13, 17, 16, 26, 17, 13,
+        23, 24, 11, 15, 13, 17, 16, 26, 17, 13, 19, 19, 11, 15, 13, 16, 24, 26,
+        17, 13, 16, 19, 11, 15, 13, 16, 22, 26, 16, 13, 24, 23, 11, 15, 13, 16,
+        20, 26, 16, 13, 24, 17, 11, 15, 13, 16, 18, 26, 16, 13, 24, 20, 11, 15,
+        13, 16, 16, 26, 17, 13, 15, 21, 11, 15, 13, 16, 15, 26, 17, 13, 17, 19,
+        11, 15, 13, 15, 24, 26, 17, 13])
+tensor([[    18,     13,     15,  ...,     26,     17,     13],
+        [    13,     16,     21,  ...,     15,     13,     15],
+        [    19,     22,     11,  ..., 151643, 151643, 151643],
+        ...,
+        [    21,     13,     16,  ...,     18,     16,     26],
+        [    22,     26,     16,  ..., 151643, 151643, 151643],
+        [    18,     13,     24,  ..., 151643, 151643, 151643]])
+tensor([    18,     13,     24,     22,     11,     15,     13,     17,     21,
+            26,     19,     13,     16,     15,     11,     15,     13,     17,
+            17,     26,     19,     13,     19,     17,     11,     15,     13,
+            16,     24,     26,     19,     13,     24,     18,     11,     15,
+            13,     16,     22,     26,     20,     13,     21,     15,     11,
+            15,     13,     16,     20,     26,     21,     13,     19,     16,
+            11,     15,     13,     16,     20,     26,     22,     13,     18,
+            17,     11,     15,     13,     16,     20,     26,     23,     13,
+            17,     21,     11,     15,     13,     16,     21,     26,     24,
+            13,     16,     17,     11,     15,     13,     16,     23,     26,
+            24,     13,     22,     19,     11,     15,     13,     17,     16,
+            26,     24,     13,     24,     21,     11,     15,     13,     17,
+            21,     26,     24,     13,     21,     22,     11,     15,     13,
+            18,     16,     26,     23,     13,     23,     22,     11,     15,
+            13,     18,     21,     26,     22,     13,     22,     17,     11,
+            15,     13,     19,     15,     26,     21,     13,     20,     16,
+            11,     15,     13,     19,     16,     26,     20,     13,     19,
+            24,     11,     15,     13,     19,     15,     26,     19,     13,
+            22,     24,     11,     15,     13,     18,     21,     26,     19,
+            13,     19,     15,     11,     15,     13,     18,     16,     26,
+            19,     13,     17,     22,     11,     15,     13,     17,     22,
+            26,     19,     13,     18,     21,     11,     15,     13,     17,
+            18,     26,     19,     13,     21,     19,     11,     15,     13,
+            17,     15,     26,     20,     13,     16,     15,     11,     15,
+            13,     16,     23,     26,     20,     13,     22,     15,     11,
+            15,     13,     16,     21,     26,     21,     13,     19,     18,
+            11,     15,     13,     16,     21,     26,     22,     13,     17,
+            19,     11,     15,     13,     16,     21, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643,
+        151643, 151643, 151643, 151643, 151643, 151643, 151643, 151643])
+Evaluating:   0%|          | 0/156 [00:00<?, ?it/s]/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:629: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:634: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:651: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+Evaluating: 100%|██████████| 156/156 [06:55<00:00,  2.66s/it]
+
+Evaluation Results:
+  Average Cross-Entropy Loss: 0.8719
+  Average MSE (forecast):     13.3392
+Validation Loss: 0.8719
+Validation MSE (forecast): 13.3392
+Evaluating:   0%|          | 0/156 [00:00<?, ?it/s]/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:629: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:634: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:651: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+Evaluating: 100%|██████████| 156/156 [07:10<00:00,  2.76s/it]
+
+Evaluation Results:
+  Average Cross-Entropy Loss: 0.8719
+  Average MSE (forecast):     13.3392
+Validation Loss: 0.8719
+Validation MSE (forecast): 13.3392
+Evaluating:   0%|          | 0/156 [00:00<?, ?it/s]/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:629: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:634: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:651: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+Evaluating: 100%|██████████| 156/156 [08:25<00:00,  3.24s/it]
+
+Evaluation Results:
+  Average Cross-Entropy Loss: 3.6721
+  Average MSE (forecast):     13.8916
+Validation Loss: 0.8719
+Validation MSE (forecast): 13.3392
