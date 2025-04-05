@@ -97,7 +97,7 @@ def flops_feedforward(batch_size: int, seq_len: int, hidden_dim: int, ffn_ratio:
     Typically, the FFN consists of two linear layers and an activation function.
     Assume:
       - First linear layer: from hidden_dim to intermediate_dim (where intermediate_dim = ffn_ratio * hidden_dim).
-      - Activation (e.g., ReLU): 1 FLOP per element.
+      - Activation : SwigLu.
       - Second linear layer: from intermediate_dim back to hidden_dim.
     
     Args:
@@ -114,7 +114,7 @@ def flops_feedforward(batch_size: int, seq_len: int, hidden_dim: int, ffn_ratio:
     # For each token: (2*hidden_dim - 1) * intermediate_dim
     flops_linear1 = batch_size * seq_len * ((2 * hidden_dim - 1) * intermediate_dim)
     # Activation FLOPS:
-    flops_activation = batch_size * seq_len * intermediate_dim * 14
+    flops_activation = batch_size * seq_len * intermediate_dim * 4
     # Second linear layer FLOPS:
     flops_linear2 = batch_size * seq_len * ((2 * intermediate_dim - 1) * hidden_dim)
     return flops_linear1 + flops_activation + flops_linear2

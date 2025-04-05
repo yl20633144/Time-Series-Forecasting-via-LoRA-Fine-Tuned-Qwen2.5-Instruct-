@@ -1,0 +1,15 @@
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+Training:   0%|          | 0/500 [00:00<?, ?it/s]TOKENIZERS_PARALLELISM=(true | false)
+Training: 100%|██████████| 500/500 [10:01<00:00,  1.20s/it, loss=0.685]
+Step 50: loss = 0.7663
+Step 100: loss = 0.7953
+Step 150: loss = 0.9891
+Step 200: loss = 0.6940
+Step 250: loss = 0.6120
+Step 300: loss = 0.5684
+Step 350: loss = 0.7984
+Step 400: loss = 0.6226
+Step 450: loss = 0.5419
+Step 500: loss = 0.6846

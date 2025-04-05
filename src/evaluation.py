@@ -153,16 +153,14 @@ def evaluation(model, tokenizer, tokenized_data, context_ratio: float = 0.7):
             plt.plot(pred_array[:, 0], label="Predicted Prey")
             plt.plot(pred_array[:, 1], label="Predicted Predator", linestyle="--")
             plt.title(f"Forecast Comparison for Sequence {i}")
+            plt.xlabel("Time Step")
+            plt.ylabel("Population")
             plt.legend()
             wandb.log({f"forecast_seq_{i}": wandb.Image(plt)})
             plt.close()
         except Exception as e:
             print(f"Sequence {i}: Error in plotting forecast: {e}")
         
-        wandb.log({
-            "loss_per_sequence": avg_loss_seq,
-            "mse_per_sequence": mse,
-        }, step=i+1)
     
     avg_loss_overall = np.mean(all_seq_losses) if all_seq_losses else float("inf")
     avg_mse_overall = np.mean(all_seq_mses) if all_seq_mses else float("inf")

@@ -1,0 +1,16 @@
+{"time":"2025-04-05T03:54:08.774537+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/liuyihao/Desktop/m2cw/wandb/run-20250405_035408-whw68umh/logs/debug-core.log"}
+{"time":"2025-04-05T03:54:08.889982+01:00","level":"INFO","msg":"created new stream","id":"whw68umh"}
+{"time":"2025-04-05T03:54:08.890085+01:00","level":"INFO","msg":"stream: started","id":"whw68umh"}
+{"time":"2025-04-05T03:54:08.890104+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"whw68umh"}
+{"time":"2025-04-05T03:54:08.890341+01:00","level":"INFO","msg":"handler: started","stream_id":"whw68umh"}
+{"time":"2025-04-05T03:54:08.890249+01:00","level":"INFO","msg":"sender: started","stream_id":"whw68umh"}
+{"time":"2025-04-05T03:54:09.1122+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-05T03:55:25.129253+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-05T03:55:25.13082+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-05T03:55:26.052574+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-05T03:55:26.143409+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading summary","runtime_seconds":0.090715334}],"total_operations":1}}
+{"time":"2025-04-05T03:55:26.216945+01:00","level":"INFO","msg":"stream: closing","id":"whw68umh"}
+{"time":"2025-04-05T03:55:26.216962+01:00","level":"INFO","msg":"handler: closed","stream_id":"whw68umh"}
+{"time":"2025-04-05T03:55:26.216966+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"whw68umh"}
+{"time":"2025-04-05T03:55:26.216972+01:00","level":"INFO","msg":"sender: closed","stream_id":"whw68umh"}
+{"time":"2025-04-05T03:55:26.217326+01:00","level":"INFO","msg":"stream: closed","id":"whw68umh"}

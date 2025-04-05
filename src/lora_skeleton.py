@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 from accelerate import Accelerator
-from preprocessor import load_and_preprocess
-from qwen import load_qwen
+from .preprocessor import load_and_preprocess
+from .qwen import load_qwen
 from tqdm import tqdm
 import wandb
 import matplotlib.pyplot as plt
