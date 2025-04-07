@@ -1,1 +1,0 @@
-{"training_loss_curve":{"height":480,"_type":"image-file","sha256":"c3fb275ceb00dca20eb7a56e11cba4372febac3a72de3712017ece6603b3ff40","size":50534,"path":"media/images/training_loss_curve_500_c3fb275ceb00dca20eb7.png","format":"png","width":640},"_wandb":{"runtime":603},"_runtime":603.399855,"_step":500,"step":499,"loss":0.6845589876174927,"_timestamp":1.743820572035101e+09}

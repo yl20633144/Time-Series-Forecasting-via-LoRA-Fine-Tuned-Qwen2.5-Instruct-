@@ -1,0 +1,160 @@
+src.flops
+=========
+
+.. py:module:: src.flops
+
+.. autoapi-nested-parse::
+
+   FLOPS Estimation Framework for Qwen2.5-Instruct Model
+
+   This script provides functions to calculate the FLOPS (floating point operations)
+   for different components of the Qwen2.5-Instruct model.
+
+   The overall structure includes:
+       1. Basic modules (embedding, multi-head attention, feed-forward network, normalization)
+       2. A single Transformer block that combines these modules.
+       3. The overall Qwen model (embedding + multiple Transformer blocks + output layer).
+       4. Total FLOPS for an experiment (training or inference), considering batch size, sequence length,
+          number of steps, and that backward pass FLOPS = 2 × forward pass FLOPS.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   src.flops.flops_embedding
+   src.flops.flops_attention
+   src.flops.flops_feedforward
+   src.flops.flops_norm
+   src.flops.flops_transformer_block
+   src.flops.flops_cross_entropy_loss
+   src.flops.flops_qwen_model
+   src.flops.flops_for_experiment
+
+
+Module Contents
+---------------
+
+.. py:function:: flops_embedding(batch_size: int, seq_len: int, hidden_dim: int) -> int
+
+   Calculate FLOPS for the embedding layer.
+
+   For simplicity, assume:
+   - Each token is embedded into a vector of size hidden_dim.
+     - Adding positional embeddings: one addition per element.
+
+   :param batch_size: Number of samples in the batch.
+   :param seq_len: Length of each sequence.
+   :param hidden_dim: Dimension of the embeddings.
+
+   :returns: Estimated FLOPS for the embedding operation.
+
+
+.. py:function:: flops_attention(batch_size: int, seq_len: int, hidden_dim: int, num_heads: int, r: int = 0) -> int
+
+   Estimate FLOPS for a multi-head attention layer.
+
+   This should include:
+     - Q, K, V projections (matrix multiplications).
+     - Scaled dot-product attention computation (including Q*K^T, softmax, and multiplication with V).
+     - Output projection.
+
+   :param batch_size: Number of samples in the batch.
+   :param seq_len: Sequence length.
+   :param hidden_dim: Hidden dimension of the model.
+   :param num_heads: Number of attention heads.
+
+   :returns: Estimated FLOPS for the attention layer.
+
+
+.. py:function:: flops_feedforward(batch_size: int, seq_len: int, hidden_dim: int, ffn_ratio: float = 4.0) -> int
+
+   Estimate FLOPS for the feed-forward network (MLP) in a Transformer.
+
+   Typically, the FFN consists of two linear layers and an activation function.
+   Assume:
+     - First linear layer: from hidden_dim to intermediate_dim (where intermediate_dim = ffn_ratio * hidden_dim).
+     - Activation : SwigLu.
+     - Second linear layer: from intermediate_dim back to hidden_dim.
+
+   :param batch_size: Number of samples in the batch.
+   :param seq_len: Sequence length.
+   :param hidden_dim: Hidden dimension of the model.
+   :param ffn_ratio: Multiplier to determine the intermediate dimension.
+
+   :returns: Estimated FLOPS for the FFN.
+
+
+.. py:function:: flops_norm(batch_size: int, seq_len: int, hidden_dim: int) -> int
+
+   Estimate FLOPS for a normalization layer (RMSNorm
+
+
+
+   :param batch_size: Number of samples in the batch.
+   :param seq_len: Sequence length.
+   :param hidden_dim: Hidden dimension.
+
+   :returns: Estimated FLOPS for the normalization layer.
+
+
+.. py:function:: flops_transformer_block(batch_size: int, seq_len: int, hidden_dim: int, num_heads: int, ffn_ratio: float = 4.0, r: int = 0) -> int
+
+   Estimate FLOPS for a single Transformer block, which includes:
+     - Multi-head attention.
+     - Feed-forward network.
+     - Two normalization layers.
+
+   :param batch_size: Number of samples in the batch.
+   :param seq_len: Sequence length.
+   :param hidden_dim: Hidden dimension of the model.
+   :param num_heads: Number of attention heads.
+   :param ffn_ratio: FFN ratio for intermediate dimension.
+
+   :returns: Estimated FLOPS for one Transformer block.
+
+
+.. py:function:: flops_cross_entropy_loss(batch_size: int, seq_len: int) -> int
+
+.. py:function:: flops_qwen_model(batch_size: int, seq_len: int, hidden_dim: int, num_layers: int, num_heads: int, ffn_ratio: float, r: int = 0) -> int
+
+   Estimate FLOPS for one forward pass of the entire Qwen2.5-Instruct model.
+   This includes:
+     - Embedding layer.
+     - Multiple Transformer blocks.
+     - Output (LM head) layer.
+
+   :param batch_size: Number of samples in the batch.
+   :param seq_len: Sequence length.
+   :param hidden_dim: Hidden dimension of the model.
+   :param num_layers: Number of Transformer blocks.
+   :param num_heads: Number of attention heads.
+   :param ffn_ratio: FFN ratio for the feed-forward network.
+
+   :returns: Estimated FLOPS for one forward pass.
+
+
+.. py:function:: flops_for_experiment(num_steps: int, batch_size: int, seq_len: int, hidden_dim: int, num_layers: int, num_heads: int, ffn_ratio: float, r: int, training: bool = True) -> int
+
+   Calculate the total estimated FLOPS for an experiment.
+
+   For training:
+     Total FLOPS = num_steps * (forward FLOPS + backward FLOPS)
+                 = num_steps * (forward FLOPS * 3)  (assuming backward pass costs 2x forward)
+   For inference:
+     Total FLOPS = num_steps * forward FLOPS
+
+   :param num_steps: Number of training or inference steps.
+   :param batch_size: Batch size.
+   :param seq_len: Sequence length.
+   :param hidden_dim: Hidden dimension.
+   :param num_layers: Number of Transformer blocks.
+   :param num_heads: Number of attention heads.
+   :param ffn_ratio: FFN ratio.
+   :param training: Whether to calculate FLOPS for training (includes backward pass).
+
+   :returns: Total estimated FLOPS for the experiment.
+
+

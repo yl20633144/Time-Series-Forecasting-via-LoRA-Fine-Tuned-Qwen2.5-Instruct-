@@ -1,0 +1,30 @@
+src.qwen
+========
+
+.. py:module:: src.qwen
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   src.qwen.load_qwen
+
+
+Module Contents
+---------------
+
+.. py:function:: load_qwen()
+
+   Load the Qwen2.5-0.5B-Instruct model and tokenizer from HuggingFace.
+
+   This function loads the Qwen2.5-Instruct model with all parameters frozen except for the bias in the
+   language modeling head (`lm_head.bias`), which is initialized to zeros and made trainable. This is
+   typically used as a simple form of tuning when full fine-tuning is computationally expensive.
+
+   :returns:     - model (transformers.PreTrainedModel): The Qwen2.5-Instruct model with frozen parameters except for `lm_head.bias`.
+                 - tokenizer (transformers.PreTrainedTokenizer): Corresponding tokenizer from HuggingFace.
+   :rtype: tuple
+
+

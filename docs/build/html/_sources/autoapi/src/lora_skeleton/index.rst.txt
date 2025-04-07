@@ -1,0 +1,133 @@
+src.lora_skeleton
+=================
+
+.. py:module:: src.lora_skeleton
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   src.lora_skeleton.LoRALinear
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   src.lora_skeleton.apply_lora
+   src.lora_skeleton.load_data
+   src.lora_skeleton.train_lora
+
+
+Module Contents
+---------------
+
+.. py:class:: LoRALinear(original_linear: torch.nn.Linear, r: int, alpha: int = None)
+
+   Bases: :py:obj:`torch.nn.Module`
+
+
+   Base class for all neural network modules.
+
+   Your models should also subclass this class.
+
+   Modules can also contain other Modules, allowing them to be nested in
+   a tree structure. You can assign the submodules as regular attributes::
+
+       import torch.nn as nn
+       import torch.nn.functional as F
+
+       class Model(nn.Module):
+           def __init__(self) -> None:
+               super().__init__()
+               self.conv1 = nn.Conv2d(1, 20, 5)
+               self.conv2 = nn.Conv2d(20, 20, 5)
+
+           def forward(self, x):
+               x = F.relu(self.conv1(x))
+               return F.relu(self.conv2(x))
+
+   Submodules assigned in this way will be registered, and will also have their
+   parameters converted when you call :meth:`to`, etc.
+
+   .. note::
+       As per the example above, an ``__init__()`` call to the parent class
+       must be made before assignment on the child.
+
+   :ivar training: Boolean represents whether this module is in training or
+                   evaluation mode.
+   :vartype training: bool
+
+
+   .. py:attribute:: original_linear
+
+
+   .. py:attribute:: r
+
+
+   .. py:attribute:: alpha
+
+
+   .. py:attribute:: A
+
+
+   .. py:attribute:: B
+
+
+   .. py:method:: forward(x)
+
+
+.. py:function:: apply_lora(model, r=4, alpha=None)
+
+   Apply LoRA (Low-Rank Adaptation) to the query and value projection layers of a Qwen2.5-Instruct model.
+
+   :param model: The base Qwen model to modify.
+   :type model: transformers.PreTrainedModel
+   :param r: LoRA rank. Defaults to 4.
+   :type r: int, optional
+   :param alpha: LoRA alpha scaling factor. If None, defaults to r.
+   :type alpha: int, optional
+
+   :returns: The modified model with LoRA modules injected.
+   :rtype: transformers.PreTrainedModel
+
+
+.. py:function:: load_data(tokenizer, path='lotka_volterra_data.h5', max_ctx_length=512, stride=256)
+
+   Load and tokenize the Lotka-Volterra dataset using LLMTIME scheme.
+
+   :param tokenizer: Tokenizer from Qwen model.
+   :type tokenizer: transformers.PreTrainedTokenizer
+   :param path: Path to the dataset HDF5 file. Defaults to "lotka_volterra_data.h5".
+   :type path: str
+   :param max_ctx_length: Maximum context length for token sequences. Defaults to 512.
+   :type max_ctx_length: int
+   :param stride: Sliding window stride size. Defaults to 256.
+   :type stride: int
+
+   :returns:     Tokenized and padded tensors for train, validation, and test datasets.
+   :rtype: Tuple[torch.Tensor, torch.Tensor, torch.Tensor]
+
+
+.. py:function:: train_lora(model, train_input_ids, learning_rate=1e-05, batch_size=4, max_steps=10000)
+
+   Train the Qwen model with LoRA-adapted layers using the given training inputs.
+
+   :param model: The Qwen model with LoRA applied.
+   :type model: transformers.PreTrainedModel
+   :param train_input_ids: Tokenized training data tensor.
+   :type train_input_ids: torch.Tensor
+   :param learning_rate: Learning rate for Adam optimizer. Defaults to 1e-5.
+   :type learning_rate: float
+   :param batch_size: Training batch size. Defaults to 4.
+   :type batch_size: int
+   :param max_steps: Maximum training steps. Defaults to 10000.
+   :type max_steps: int
+
+   :returns: A list of training losses at each step.
+   :rtype: List[float]
+
+

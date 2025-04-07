@@ -34,6 +34,18 @@ class LoRALinear(nn.Module):
 
 
 def apply_lora(model, r=4, alpha=None):
+
+    """
+    Apply LoRA (Low-Rank Adaptation) to the query and value projection layers of a Qwen2.5-Instruct model.
+
+    Args:
+        model (transformers.PreTrainedModel): The base Qwen model to modify.
+        r (int, optional): LoRA rank. Defaults to 4.
+        alpha (int, optional): LoRA alpha scaling factor. If None, defaults to r.
+
+    Returns:
+        transformers.PreTrainedModel: The modified model with LoRA modules injected.
+    """
     for layer in model.model.layers:
         layer.self_attn.q_proj = LoRALinear(layer.self_attn.q_proj, r=r, alpha=alpha)
         layer.self_attn.v_proj = LoRALinear(layer.self_attn.v_proj, r=r, alpha=alpha)
@@ -43,6 +55,19 @@ def apply_lora(model, r=4, alpha=None):
 
 
 def load_data(tokenizer, path="lotka_volterra_data.h5", max_ctx_length=512, stride=256):
+    """
+    Load and tokenize the Lotka-Volterra dataset using LLMTIME scheme.
+
+    Args:
+        tokenizer (transformers.PreTrainedTokenizer): Tokenizer from Qwen model.
+        path (str): Path to the dataset HDF5 file. Defaults to "lotka_volterra_data.h5".
+        max_ctx_length (int): Maximum context length for token sequences. Defaults to 512.
+        stride (int): Sliding window stride size. Defaults to 256.
+
+    Returns:
+        Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+            Tokenized and padded tensors for train, validation, and test datasets.
+    """
     train_texts, val_texts, test_texts = load_and_preprocess(
         path, decimal_places=2, max_target_value=9.99
     )
@@ -67,6 +92,19 @@ def load_data(tokenizer, path="lotka_volterra_data.h5", max_ctx_length=512, stri
 _,tokenizer=load_qwen()
 
 def train_lora(model, train_input_ids, learning_rate=1e-5, batch_size=4, max_steps=10000):
+    """
+    Train the Qwen model with LoRA-adapted layers using the given training inputs.
+
+    Args:
+        model (transformers.PreTrainedModel): The Qwen model with LoRA applied.
+        train_input_ids (torch.Tensor): Tokenized training data tensor.
+        learning_rate (float): Learning rate for Adam optimizer. Defaults to 1e-5.
+        batch_size (int): Training batch size. Defaults to 4.
+        max_steps (int): Maximum training steps. Defaults to 10000.
+
+    Returns:
+        List[float]: A list of training losses at each step.
+    """
     train_dataset = TensorDataset(train_input_ids)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 

@@ -1,0 +1,54 @@
+src.preprocessor
+================
+
+.. py:module:: src.preprocessor
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   src.preprocessor.convert_to_llmtime
+   src.preprocessor.load_and_preprocess
+
+
+Module Contents
+---------------
+
+.. py:function:: convert_to_llmtime(data_array, alpha, decimal_places)
+
+   Convert a dataset of predator-prey time series into LLMTIME format.
+
+   Parameters:
+   data_array: NumPy array
+       Containing time series data of shape (N, T, 2),
+                 where N is the number of systems, T is the number of time points,
+                 and the last dimension represents (prey, predator).
+
+   alpha: float
+       Scaling factor computed from the training set.
+
+   decimal_places: int
+       Number of decimal places to round the scaled values.
+
+   Returns:
+   - A list of LLMTIME-formatted strings, where each string represents a time series.
+
+
+.. py:function:: load_and_preprocess(file_path, decimal_places, max_target_value)
+
+   Load and preprocess the predator-prey dataset from an HDF5 file.
+
+   :param file_path: Path to the HDF5 file containing the dataset.
+   :type file_path: str
+   :param decimal_places: Number of decimal places to round the scaled values.
+   :type decimal_places: int
+   :param max_target_value: Maximum target value for scaling.
+   :type max_target_value: float
+
+   :returns: * **train_texts** (*list of str*) -- Preprocessed training data sequences in LLMTIME format.
+             * **val_texts** (*list of str*) -- Preprocessed validation data sequences in LLMTIME format.
+             * **test_texts** (*list of str*) -- Preprocessed test data sequences in LLMTIME format.
+
+

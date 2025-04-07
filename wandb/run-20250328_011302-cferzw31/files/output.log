@@ -1,5 +1,0 @@
-Training:   2%|▏         | 8/500 [00:22<14:02,  1.71s/it, loss=3.33]wandb-core(2139) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
-wandb-core(2189) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
-wandb-core(2240) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
-wandb-core(2292) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
-wandb-core(2350) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
