@@ -59,3 +59,22 @@
 {"time":"2025-04-05T19:01:11.395349+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:49199->35.186.228.49:443: read: connection reset by peer"}
 {"time":"2025-04-05T19:14:46.204699+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:53171->35.186.228.49:443: read: connection reset by peer"}
 {"time":"2025-04-05T20:18:20.928403+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/q9f70z21/file_stream\": read tcp 10.255.243.185:54463->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-04-05T22:05:50.911132+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:59404->35.186.228.49:443: read: can't assign requested address"}
+{"time":"2025-04-05T22:05:53.175062+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-04-05T22:05:57.994214+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-04-05T22:05:59.665237+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/q9f70z21/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-04-05T22:06:01.748426+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/q9f70z21/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-04-05T22:06:06.704295+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/q9f70z21/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-04-05T22:06:06.928311+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-04-05T22:06:15.650159+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/q9f70z21/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-04-05T22:23:50.60291+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.255.243.185:53599->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-04-05T23:41:53.384141+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/liuyihao649-university-of-cambridge/Qwen_3a_train_model/q9f70z21/file_stream\": dial tcp 35.186.228.49:443: connect: operation timed out"}
+{"time":"2025-04-05T23:46:17.45167+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-05T23:46:17.453833+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-05T23:46:18.126089+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-05T23:46:18.293437+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-04-05T23:46:18.306099+01:00","level":"INFO","msg":"stream: closing","id":"q9f70z21"}
+{"time":"2025-04-05T23:46:18.306144+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"q9f70z21"}
+{"time":"2025-04-05T23:46:18.306376+01:00","level":"INFO","msg":"handler: closed","stream_id":"q9f70z21"}
+{"time":"2025-04-05T23:46:18.306403+01:00","level":"INFO","msg":"sender: closed","stream_id":"q9f70z21"}
+{"time":"2025-04-05T23:46:18.30642+01:00","level":"INFO","msg":"stream: closed","id":"q9f70z21"}

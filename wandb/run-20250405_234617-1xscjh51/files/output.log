@@ -1,0 +1,137 @@
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:629: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:634: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/opt/anaconda3/envs/qwen/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:651: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+Validation Loss: 1.6563 Validation MSE (forecast): 0.1248
+=== Inference FLOPS Calculation ===
+Number of inference steps: 1
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for inference: 12.682120212067874
+=== Inference FLOPS Calculation ===
+Number of optimizer steps: 1
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 12.682120212067874
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 1
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 12.682120212067874
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 500
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 15.381090216403893
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 500
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 2404862312448000
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 500
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 15.381090216403893
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 1000
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 15.682120212067874
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 9000
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 16.636362721507197
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 1000
+Batch size: 4
+Sequence length: 128
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 15.060515347554395
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 1000
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 15.682120212067874
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 1000
+Batch size: 4
+Sequence length: 768
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 15.870769220352356
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 3000
+Batch size: 4
+Sequence length: 768
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 16.347890475072017
+=== Experiment FLOPS Calculation ===
+Number of optimizer steps: 500
+Batch size: 4
+Sequence length: 512
+Hidden dimension: 896
+Transformer blocks: 24
+Attention heads: 14
+FFN ratio: 4.0
+------------------------------------
+Total FLOPS for this experiment: 15.381090216403893

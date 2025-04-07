@@ -2,9 +2,8 @@
 """
 FLOPS Estimation Framework for Qwen2.5-Instruct Model
 
-This script provides a skeleton for functions to calculate the FLOPS (floating point operations)
-for different components of the Qwen2.5-Instruct model. You can extend each function to add
-detailed FLOPS calculations based on the provided FLOPS table.
+This script provides functions to calculate the FLOPS (floating point operations)
+for different components of the Qwen2.5-Instruct model.
 
 The overall structure includes:
     1. Basic modules (embedding, multi-head attention, feed-forward network, normalization)
@@ -19,7 +18,7 @@ def flops_embedding(batch_size: int, seq_len: int, hidden_dim: int) -> int:
     Calculate FLOPS for the embedding layer.
     
     For simplicity, assume:
-      - Embedding lookup is free (0 FLOPS).
+    - Each token is embedded into a vector of size hidden_dim.
       - Adding positional embeddings: one addition per element.
     
     Args:
@@ -110,20 +109,20 @@ def flops_feedforward(batch_size: int, seq_len: int, hidden_dim: int, ffn_ratio:
         Estimated FLOPS for the FFN.
     """
     intermediate_dim = int(hidden_dim * ffn_ratio)
-    # TODO: Compute FLOPS for first linear layer:
+    
     # For each token: (2*hidden_dim - 1) * intermediate_dim
     flops_linear1 = batch_size * seq_len * ((2 * hidden_dim - 1) * intermediate_dim)
     # Activation FLOPS:
-    flops_activation = batch_size * seq_len * intermediate_dim * 4
+    flops_activation = batch_size * seq_len * intermediate_dim * 14
     # Second linear layer FLOPS:
     flops_linear2 = batch_size * seq_len * ((2 * intermediate_dim - 1) * hidden_dim)
     return flops_linear1 + flops_activation + flops_linear2
 
 def flops_norm(batch_size: int, seq_len: int, hidden_dim: int) -> int:
     """
-    Estimate FLOPS for a normalization layer (e.g., RMSNorm or LayerNorm).
+    Estimate FLOPS for a normalization layer (RMSNorm 
     
-    A simplified estimation: assume a constant factor (e.g., 5) times hidden_dim per token.
+  
     
     Args:
         batch_size: Number of samples in the batch.
@@ -166,7 +165,7 @@ def flops_transformer_block(batch_size: int, seq_len: int, hidden_dim: int, num_
 
 
 def flops_cross_entropy_loss(batch_size: int, seq_len: int) -> int:
-    # exp + sum + log + mul + neg ≈ 11 * V per token
+    
     vocab_size = 151936
     return int(batch_size * seq_len * 11 * vocab_size)
 
