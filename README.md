@@ -1,4 +1,5 @@
-# This is the M2 coursework. This repository includes python script, ipynb file, report and the environment used for this coursework.
+## Description
+This project investigates the use of large language models for time series forecasting. We apply LoRA to fine-tune Qwen2.5-Instruct (0.5B) on the Lotka–Volterra predator-prey system to evaluate parameter-efficient adaptation for scientific forecasting tasks.
 
 ## Conda environment
 
